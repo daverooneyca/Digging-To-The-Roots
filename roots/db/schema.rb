@@ -14,13 +14,17 @@
 ActiveRecord::Schema.define(version: 20151030102317) do
 
   create_table "players", force: true do |t|
-    t.string   "username"
+    t.string   "username", :limit => 64
     t.string   "name"
     t.integer  "age"
     t.string   "city"
-    t.string   "country"
+    t.string   "country", :limit => 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index :players, :username
+  add_index :players, :city
+  add_index :players, :name
 
 end

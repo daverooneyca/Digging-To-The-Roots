@@ -1,4 +1,8 @@
-<h1>Listing players</h1>
+<h1>Players</h1>
+
+<%= link_to 'Home', "/" %>&nbsp;&nbsp;&nbsp;<%= link_to 'Create New Player', new_player_path %>
+<br/>
+<br/>
 
 <table>
   <thead>
@@ -28,6 +32,4 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Player', new_player_path %>
+<p><%= will_paginate @players %></p>
